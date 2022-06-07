@@ -1,6 +1,8 @@
 from statistics import quantiles
 from PIL import Image
 
+from resize import resize_img
+
 img_path = "./poetry_test/E7AB8BE88AB1E99FBF.jpg"
 
 print("hello world")
@@ -24,5 +26,9 @@ res_size = (res_w, round(img_h * res_raito))
 
 print(res_size)
 
-res_img = img.resize(res_size)
-res_img.save("dist/output.jpg", quantiles=90)
+# res_img = img.resize(res_size)
+# res_img.save("dist/output.jpg", quantiles=90)
+
+dist_path = "dist"
+
+resize_img("./poetry_test/test_img.jpg", "test_img", 300, dist_path, 90)
